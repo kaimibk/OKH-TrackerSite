@@ -1,0 +1,16 @@
+version: "3"
+services:
+    jekyll-serve:
+        image: bretfisher/jekyll-serve
+        container_name: jekyll-serve
+        volumes:
+            - .:/site
+        environment:
+            - JEKYLL_ENV=development
+        ports:
+            - 4000:4000
+    jekyll-dev:
+        image: bretfisher/jekyll
+        container_name: jekyll-dev
+        volumes:
+            - .:/site
