@@ -1,70 +1,11 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+layout: default
 ---
 
-{% for op in site.tracker %}
-    <h1>{{ op.title }}</h1>
-    <ul>
-        <li>
-            Category: {{ op.category }}
-        </li>
-        <li>
-            Area: {{ op.area }}
-        </li>
-        <li>
-            Caption: {{ op.caption }}
-        </li>
-        <li>
-            Latitude: {{ op.latitude }}
-        </li>
-        <li>
-            Longitude: {{ op.longitude }}
-        </li>
-        <li>
-            Email: {{ op.email }}
-        </li>
-        <li>
-            Phone: {{ op.phone }}
-        </li>
-        <li>
-            Website: {{ op.website }}
-        </li>
-        <li>
-            Address: {{ op.address }}
-        </li>
-    </ul>
-{% endfor %}
+<!-- Page Heading -->
+<h1 class="h3 mb-2 text-gray-800">Tables</h1>
+<p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
 
-<div id="mapdiv"></div>
+<!-- {% capture datafile %}{{ include.file }}{% endcapture %} -->
 
-<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
-<script>
-    map = new OpenLayers.Map("mapdiv");
-    map.addLayer(new OpenLayers.Layer.OSM());
-
-    var lonLat = new OpenLayers.LonLat( -157.81121023513285 , 21.307494676964282 )
-          .transform(
-            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
-            map.getProjectionObject() // to Spherical Mercator Projection
-          );
-          
-    var zoom=16;
-
-    var markers = new OpenLayers.Layer.Markers( "Markers" );
-    map.addLayer(markers);
-
-    {% for op in site.tracker %}
-        console.log({{ op.longitude }})
-        var tempLonLat = new OpenLayers.LonLat( {{ op.longitude }}, {{ op.latitude }} ).transform(
-            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
-            map.getProjectionObject() // to Spherical Mercator Projection
-          );
-        console.log(tempLonLat)
-        markers.addMarker(new OpenLayers.Marker(tempLonLat));
-    {% endfor %}
-    
-    // markers.addMarker(new OpenLayers.Marker(lonLat));
-    
-    map.setCenter (lonLat, zoom);
-  </script>
+{% include datatable.html title="Datatable Example" file="table-example" %}
