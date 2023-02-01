@@ -143,23 +143,23 @@
 		Barfiller
 	--------------------*/
     $('#bar1').barfiller({
-        barColor: "#f03250",
+        barColor: "#0F75BC",
     });
 
     $('#bar2').barfiller({
-        barColor: "#f03250",
+        barColor: "#0F75BC",
     });
 
     $('#bar3').barfiller({
-        barColor: "#f03250",
+        barColor: "#0F75BC",
     });
 
     $('#bar4').barfiller({
-        barColor: "#f03250",
+        barColor: "#0F75BC",
     });
 
     $('#bar5').barfiller({
-        barColor: "#f03250",
+        barColor: "#0F75BC",
     });
 
     /*------------------
