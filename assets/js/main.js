@@ -127,7 +127,9 @@
         background: "rgba(168, 168, 168, 0.3)",
         cursorborder: "",
         autohidemode: false,
-        horizrailenabled: false
+        horizrailenabled: false,
+        emulatetouch: true,
+        cursordragontouch: true
     });
 
     $(".filter.nice-scroll").niceScroll({
