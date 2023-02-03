@@ -1383,9 +1383,9 @@ ol {
 	width: 55%;
 	height: 100%;
 	padding: 0 40px;
-	padding-top: 250px;
+	/* padding-top: 250px; */
 	/* padding-top: 10em; */
-	/* padding-top: 140px; */
+	padding-top: 140px;
 	overflow-y: auto;
 	float: left;
 }

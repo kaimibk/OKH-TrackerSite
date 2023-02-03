@@ -10,7 +10,7 @@
     var map = new L.map('map').setView({lon: -158.0001860938307, lat: 21.43945302206258}, 7);
     
     // Creating a Layer object
-    var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+    var layer = new L.TileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png');
     
     // show the scale bar on the lower left corner
     L.control.scale({imperial: true, metric: true}).addTo(map);
