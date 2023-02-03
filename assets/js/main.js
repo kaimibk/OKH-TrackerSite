@@ -129,7 +129,8 @@
         autohidemode: false,
         horizrailenabled: false,
         emulatetouch: true,
-        cursordragontouch: true
+        cursordragontouch: true,
+        touchaction: true
     });
 
     $(".filter.nice-scroll").niceScroll({
@@ -138,7 +139,8 @@
         background: "rgba(168, 168, 168, 0.3)",
         cursorborder: "",
         autohidemode: true,
-        horizrailenabled: false
+        horizrailenabled: false,
+        touchaction: true
     });
 
     /*------------------
