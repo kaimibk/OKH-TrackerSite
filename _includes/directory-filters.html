@@ -8,7 +8,10 @@
     </div>
     <div class="filter__select">
         <select>
-            <option value="">All Categories</option>
+            <option value="filter__tags_all">All Categories</option>
+            {% for tag in site.tags | sort | compact %}
+                <option value="filter__tags_{{tag[0]}}">{{ tag[0] | capitalize  }}</option>>
+            {% endfor %}
         </select>
     </div>
     <div class="filter__location">
@@ -45,7 +48,7 @@
             </div>
         </div>
     </div>
-    <div class="filter__tags">
+    <!-- <div class="filter__tags">
         <h6>Tag</h6>
         <label for="coupon">
             Coupons
@@ -82,6 +85,16 @@
             <input type="checkbox" id="hd">
             <span class="checkmark"></span>
         </label>
+    </div> -->
+    <div class="filter__tags">
+        <h6>Tag</h6>
+        {% for tag in site.tags | sort | compact %}
+            <label for="coupon">
+                {{ tag[0] | capitalize  }}
+                <input type="checkbox" id="filter__tags_{{tag[0]}}">
+                <span class="checkmark"></span>
+            </label>
+        {% endfor %}
     </div>
     <div class="filter__btns">
         <button type="submit">Filter Results</button>

@@ -252,7 +252,7 @@ ol {
 	left: 0;
 	top: 0;
 	width: 100%;
-	z-index: 999;
+	z-index: 999999;
 }
 
 .header.header--normal {
@@ -1384,6 +1384,8 @@ ol {
 	height: 100%;
 	padding: 0 40px;
 	padding-top: 250px;
+	/* padding-top: 10em; */
+	/* padding-top: 140px; */
 	overflow-y: auto;
 	float: left;
 }
@@ -1574,11 +1576,17 @@ ol {
 	width: 45%;
 	margin-top: 105px;
 	float: left;
+	position: relative;
 }
 
-.listing__map iframe {
+.listing__map #map {
 	width: 100%;
 	height: 100%;
+	position: relative;
+	/* position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%; */
 }
 
 /*---------------------
@@ -3102,6 +3110,7 @@ ol {
 	}
 	.listing {
 		width: 60%;
+		padding-top: 250px;
 	}
 	.listing__map {
 		width: 40%;
