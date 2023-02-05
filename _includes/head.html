@@ -4,23 +4,24 @@
     <meta name="keywords" content="Directing, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Directing | Template</title>
+    <title>{{ site.title}} | {{ page.title }}</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/flaticon.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/barfiller.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"> -->
+    <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url }}" type="text/css">
+    <link rel="stylesheet" href="{{ '/assets/css/font-awesome.min.css' | relative_url }}" type="text/css">
+    <link rel="stylesheet" href="{{ '/assets/css/elegant-icons.css' | relative_url }}" type="text/css">
+    <link rel="stylesheet" href="{{ '/assets/css/flaticon.css' | relative_url }}" type="text/css">
+    <link rel="stylesheet" href="{{ '/assets/css/nice-select.css' | relative_url }}" type="text/css">
+    <link rel="stylesheet" href="{{ '/assets/css/barfiller.css' | relative_url }}" type="text/css">
+    <link rel="stylesheet" href="{{ '/assets/css/magnific-popup.css' | relative_url }}" type="text/css">
+    <link rel="stylesheet" href="{{ '/assets/css/jquery-ui.min.css' | relative_url }}" type="text/css">
+    <link rel="stylesheet" href="{{ '/assets/css/owl.carousel.min.css' | relative_url }}" type="text/css">
+    <link rel="stylesheet" href="{{ '/assets/css/slicknav.min.css' | relative_url }}" type="text/css">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" type="text/css">
     <!-- <link rel = "stylesheet" href="assets/css/leaflet.css"/> -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
         integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
@@ -30,4 +31,6 @@
         integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
         crossorigin=""></script>
     <!-- <link rel="stylesheet" href="css/leaflet-gesture-handling.min.css" type="text/css"> -->
+    <link rel="stylesheet" href="//unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css" type="text/css">
+    <script src="{{ 'assets/js/jquery-3.3.1.min.js' | relative_url }}"></script>
 </head>
