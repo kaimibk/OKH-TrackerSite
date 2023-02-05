@@ -1,4 +1,4 @@
-<div class="listing__item" id="{{ include.id }}">
+<div class="listing__item position-relative" id="{{ include.id }}">
     <div class="listing__item__pic set-bg" data-setbg="{{ include.picture }}">
         {% if include.logo %}
             <img src="{{ include.logo }}" alt="">
@@ -11,7 +11,7 @@
     </div>
     <div class="listing__item__text">
         <div class="listing__item__text__inside">
-            <h5>{{ include.title }}</h5>
+            <a href="{{ include.url | prepend: site.baseurl }}" class="stretched-link"><h5>{{ include.title }}</h5></a>
             <!-- <div class="listing__item__text__rating">
                 <div class="listing__item__rating__star">
                     <span class="icon_star"></span>
@@ -22,7 +22,7 @@
                 </div>
                 <h6>$40 - $70</h6>
             </div> -->
-            <ul>
+            <ul class="styled">
                 <li>
                     <span class="icon_pin_alt"></span> {{ include.address }}
                 </li>

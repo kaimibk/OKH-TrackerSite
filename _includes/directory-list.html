@@ -11,17 +11,19 @@
         {% assign id = 0 %}
         {% for post in site.posts %}
         {% assign id = id | plus:1 %}
-            {% 
-                include directory-listing-item.html
-                    id=id 
-                    title=post.title
-                    picture=post.picture
-                    logo=post.logo
-                    address=post.address
-                    contact=post.contact
-                    tags=post.tags
-                    status=post.status 
-            %}
+            <a href="{{post.url}}">
+                {% 
+                    include directory-listing-item.html
+                        id=id 
+                        title=post.title
+                        picture=post.picture
+                        logo=post.logo
+                        address=post.address
+                        contact=post.contact
+                        tags=post.tags
+                        status=post.status 
+                %}
+            </a>
         {% endfor %}
     </div>
 </section>
