@@ -2002,9 +2002,12 @@ ul .styled {
 	position: relative;
 }
 
-.listing__sidebar__contact__map iframe {
+.listing__sidebar__contact__map #mini-map {
 	width: 100%;
+	height: 100%;
+	position: relative;
 }
+
 
 .listing__sidebar__contact__map img {
 	position: absolute;
@@ -3272,6 +3275,11 @@ ul .styled {
 	}
 	.listing__details__rating__bar__item .barfiller {
 		width: 180px;
+	}
+	.listing__sidebar__contact__map {
+		height: 200px;
+		width: 100%;
+		/* position: relative; */
 	}
 	.blog__details__share__item {
 		width: calc(33.33% - 34px);

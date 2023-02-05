@@ -2,6 +2,8 @@
 <html lang="en">
 
 {% include head.html %}
+<!-- <link rel="stylesheet" href="//unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css" type="text/css">
+<script src="//unpkg.com/leaflet-gesture-handling"></script> -->
 
 <body>
     <!-- Page Preloder -->
@@ -50,11 +52,8 @@
                     <div class="listing__sidebar">
                         <div class="listing__sidebar__contact">
                             <div class="listing__sidebar__contact__map">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24168.833995532765!2d-74.79633710628465!3d40.78172222265886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c384de7a5300b9%3A0x8afc61979217d49d!2sLong%20Valley%2C%20NJ%2007853%2C%20USA!5e0!3m2!1sen!2sbd!4v1586852528126!5m2!1sen!2sbd"
-                                    height="200" style="border:0;" allowfullscreen="" aria-hidden="false"
-                                    tabindex="0"></iframe>
-                                <img src="img/listing/details/map-icon.png" alt="">
+                                <div id="mini-map"></div>
+                                <!-- <img src="img/listing/details/map-icon.png" alt=""> -->
                             </div>
                             <div class="listing__sidebar__contact__text">
                                 <h4>Contacts</h4>
@@ -204,6 +203,22 @@
     <script src="{{ '/assets/js/jquery.slicknav.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/owl.carousel.min.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script> -->
+    <script>
+        // Creating a map object
+        var map = new L.map('mini-map', {gestureHandling: true}).setView({lon: {{ page.longitude }}, lat: {{ page.latitude }}}, 12);
+        
+        // Creating a Layer object
+        var layer = new L.TileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png');
+        
+        // show the scale bar on the lower left corner
+        L.control.scale({imperial: true, metric: true}).addTo(map);
+    
+        // Adding layer to the map
+        map.addLayer(layer);
+    
+        // Adding marker
+        L.marker({lon: {{ page.longitude }}, lat: {{ page.latitude }}}).bindPopup("{{ page.title }}").addTo(map);
+     </script>
 </body>
 
 </html>
