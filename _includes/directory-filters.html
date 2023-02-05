@@ -1,4 +1,5 @@
 <!-- Filter Begin -->
+{% assign sorted_tags = site.tags | sort %}
 <div class="filter">
     <div class="filter__title">
         <h5><i class="fa fa-filter"></i> Filter</h5>
@@ -6,11 +7,21 @@
     <div class="filter__search">
         <input type="text">
     </div>
+
+    <div class="filter__button">
+        <button id="All" onclick="filterUsingCategory('All')">All Posts</button>
+        {% for tag in sorted_tags %}
+            <button data-value="{{ tag[0] }}" onclick="filterUsingTag(this.data-value)">{{ tag[0] | capitalize }}</button>
+        {% endfor %}
+    </div>
+
     <div class="filter__select">
         <select>
-            <option value="filter__tags_all">All Categories</option>
-            {% for tag in site.tags | sort | compact %}
-                <option value="filter__tags_{{tag[0]}}">{{ tag[0] | capitalize  }}</option>>
+            <option value="All">All Categories</option>
+            {% for tag in sorted_tags %}
+                <!-- {% assign _t = tag[0] | first %} -->
+                <!-- <option value="filter__tags_{{tag[0]}}">{{ tag[0] | capitalize  }}</option>> -->
+                <option value="{{ tag[0] }}">{{ tag[0] | capitalize }}</option>
             {% endfor %}
         </select>
     </div>
@@ -88,7 +99,7 @@
     </div> -->
     <div class="filter__tags">
         <h6>Tag</h6>
-        {% for tag in site.tags | sort | compact %}
+        {% for tag in sorted_tags %}
             <label for="coupon">
                 {{ tag[0] | capitalize  }}
                 <input type="checkbox" id="filter__tags_{{tag[0]}}">
@@ -101,4 +112,20 @@
         <button type="submit" class="filter__reset">Reset All</button>
     </div>
 </div>
+<script>
+    $(document).on("change", ".filter__select", function(){
+        console.log($(this))
+    });
+    // function filterUsingTag(selectedTag) {
+    //     var id = 0;
+    //     {% for post in site.posts %}
+    //         var tags = {{ post.tags | jsonify }}
+    //         var postDiv = document.getElementById(++id);
+    //         postDiv.style.display =
+    //     (selectedCategory == 'All' || cats.includes(selectedCategory)) 
+    //       ? 'unset' 
+    //       : 'none';
+    //     {% endfor %}
+    // };
+</script>
 <!-- Filter End -->

@@ -8,15 +8,18 @@
         <div class="listing__text__top__right">Nearby <i class="fa fa-sort-amount-asc"></i></div>
     </div>
     <div class="listing__list">
+        {% assign id = 0 %}
         {% for post in site.posts %}
+        {% assign id = id | plus:1 %}
             {% 
-                include directory-listing-item.html 
+                include directory-listing-item.html
+                    id=id 
                     title=post.title
                     picture=post.picture
                     logo=post.logo
                     address=post.address
                     contact=post.contact
-                    categories=post.categories
+                    tags=post.tags
                     status=post.status 
             %}
         {% endfor %}
