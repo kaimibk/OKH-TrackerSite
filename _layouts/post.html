@@ -31,7 +31,7 @@
                 <div class="col-lg-4">
                     <div class="listing__hero__btns">
                         <a href="#" class="primary-btn share-btn"><i class="fa fa-mail-reply"></i> Share</a>
-                        <a href="#" class="primary-btn"><i class="fa fa-bookmark"></i> Bookmark</a>
+                        <a href="{{ page.website }}" class="primary-btn"><i class="fa fa-search"></i> Learn More / Apply</a>
                     </div>
                 </div>
             </div>
@@ -59,9 +59,15 @@
                                 <h4>Contacts</h4>
                                 <ul class="styled">
                                     <li><span class="icon_pin_alt"></span> {{ page.address }}</li>
-                                    <li><span class="icon_phone"></span> {{ page.contact }}</li>
-                                    <li><span class="icon_mail_alt"></span> Info.colorlib@gmail.com</li>
-                                    <li><span class="icon_globe-2"></span> https://colorlib.com</li>
+                                    {% if page.contact-phone %}
+                                        <li><span class="icon_phone"></span> {{ page.contact-phone }}</li>
+                                    {% endif %}
+                                    {% if page.contact-email %}
+                                        <li><span class="icon_mail_alt"></span> {{ page.contact-email }}</li>
+                                    {% endif %}
+                                    {% if page.website %}
+                                        <li><span class="icon_globe-2"></span><a href="{{ page.website }}">Learn More / Apply</a></li>
+                                    {% endif %}
                                 </ul>
                                 <!-- <div class="listing__sidebar__contact__social">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
@@ -218,6 +224,27 @@
     
         // Adding marker
         L.marker({lon: {{ page.longitude }}, lat: {{ page.latitude }}}).bindPopup("{{ page.title }}").addTo(map);
+     </script>
+     <script>
+        document.querySelector(".share-btn").addEventListener("click", async event =>{
+            if (!navigator.canShare) {
+                console.log("Clipboard API not available")
+                return
+            }
+            const text = event.target.innerText
+            try {
+                await navigator.clipboard.writeText(document.location.href)
+                event.target.innerHTML  = "Copied to Clipboard! <i class='fa fa-check'></i>"
+            } catch (err) {
+                event.target.innerHTML  = "Failed to Copy URL! <i class='fa fa-times'></i>"
+                console.error("Failed to Copy!", err)
+            }
+        })
+        // let url=document.location.href
+
+        // navigator.clipboard.writeText(url).then(function() {
+        //     alert("URL Copied!")
+        // })
      </script>
 </body>
 

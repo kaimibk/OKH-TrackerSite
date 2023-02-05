@@ -26,7 +26,19 @@
                 <li>
                     <span class="icon_pin_alt"></span> {{ include.address }}
                 </li>
-                <li><span class="icon_phone"></span> {{ include.contact }} </li>
+                {% if include.contact-phone %}
+                <li>
+                    <span class="icon_phone"></span> {{ include.contact-phone }}
+                </li>
+                {% endif %}
+                {% if include.contact-email %}
+                <li>
+                    <span class="icon_mail"></span> {{ include.contact-email }}
+                </li>
+                {% endif %}
+                <li>
+                    <span class="icon_pencil"></span> {{ include.education | capitalize }}
+                </li>
             </ul>
         </div>
         <div class="listing__item__text__info">
@@ -34,10 +46,15 @@
                 <!-- TODO: compute icon based on category -->
                 <img src="assets/img/listing/list_small_icon-1.png" alt="">
                 <span>
-                    {% for _tag in include.tags %}{{ _tag }}{% if forloop.last == false %}, {% endif %}{% endfor %}
+                    {% assign sorted_tags = include.tags | sort %}
+                    {% for _tag in sorted_tags %}{{ _tag }}{% if forloop.last == false %}, {% endif %}{% endfor %}
                 </span>
             </div>
-            <div class="listing__item__text__info__right">{{ include.status }}</div>
+            {% if include.status == "inactive" %}
+                <div class="listing__item__text__info__right closed">{{ include.status | upcase }}</div>
+            {% else %}
+                <div class="listing__item__text__info__right">{{ include.status | upcase }}</div>
+            {% endif %}
         </div>
     </div>
 </div>
