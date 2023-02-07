@@ -1998,7 +1998,7 @@ ul .styled {
 }
 
 .listing__sidebar__contact__map {
-	height: 200px;
+	height: 300px;
 	position: relative;
 }
 
@@ -3276,11 +3276,11 @@ ul .styled {
 	.listing__details__rating__bar__item .barfiller {
 		width: 180px;
 	}
-	.listing__sidebar__contact__map {
-		height: 200px;
+	/* .listing__sidebar__contact__map {
+		height: 300px;
 		width: 100%;
 		/* position: relative; */
-	}
+	} */
 	.blog__details__share__item {
 		width: calc(33.33% - 34px);
 	}
