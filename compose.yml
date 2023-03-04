@@ -9,8 +9,8 @@ services:
             - JEKYLL_ENV=development
         ports:
             - 4000:4000
-    jekyll-dev:
-        image: bretfisher/jekyll
-        container_name: jekyll-dev
-        volumes:
-            - .:/site
+    # jekyll-dev:
+    #     image: bretfisher/jekyll
+    #     container_name: jekyll-dev
+    #     volumes:
+    #         - .:/site
