@@ -1,0 +1,21 @@
+---
+layout: post
+title: "Pacific International Space Center Exploration Systems"
+education: K-12, undergraduate  # Choices: k-12, undergraduate, graduate, professional
+type: internship  # Choices: fellowship, scholarship, internship
+date_added: 2023-03-04
+date_updated: 2023-03-04
+picture: https://mlkvvxr6ac4g.i.optimole.com/w:750/h:562/q:mauto/f:avif/https://pacificspacecenter.com/wp-content/uploads/2022/10/Education-page-STARS.jpg
+logo: https://mlkvvxr6ac4g.i.optimole.com/w:2000/h:500/q:mauto/f:avif/https://pacificspacecenter.com/wp-content/uploads/2022/09/Pacific-Space-Center-BLK-landscape.png
+address: XXX street_name, city, state, zipcode
+latitude: 21.50779995695889
+longitude: -157.91119245319346
+contact-phone: (xxx) xxx-xxxx
+contact-email: xxx@xxx.xxx
+website: https://pacificspacecenter.com/education/
+status: active  # Choices: active, inactive
+tags:  # keep these lowercase
+  - computer-science
+  - computer-engineering
+---
+
